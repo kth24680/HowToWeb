@@ -1,0 +1,19 @@
+<strong> tag : 굵은 글씨로 바꿈
+<u> tag : 범위 안에 line을 그어준다.
+<h1~6> tag : 제목 역할.
+<p> : 문단을 정함.
+<br> : 줄바꿈
+
+<ul> Unorder list or <ol> Order List : 목록
+<li> 목록의 항목.
+
+<table> 표
+<tr> 줄
+<td> 셀
+
+<html>
+<head>
+<body>
+<meta charset="">
+
+<a> : 링크를 의미함.
