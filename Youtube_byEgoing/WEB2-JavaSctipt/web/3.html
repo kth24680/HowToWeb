@@ -1,31 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta content="utf-8">
-    <title>WEB - JavaScript</title>
-  </head>
-  <body>
-    <h1><a href="index.html">WEB</a></h1>
-    <input type="button" name="" value="night" onclick="
-    document.querySelector('body').style.background = 'black';
-    document.querySelector('body').style.color='white';
-    ">
-    <input type="button" name="" value="day" onclick="
-    document.querySelector('body').style.background = 'white';
-    document.querySelector('body').style.color='black';
-    ">
 
-    <ol>
-      <li><a href="1.html">HTML</a></li>
-      <li><a href="2.html">CSS</a></li>
-      <li><a href="3.html">JavaScript</a></li>
-    </ol>
-    <h2>JavaScript</h2>
-    <p>
-        sa;dlkasl;kdjaslkdjsalkjdlsakjdlkasjfds;lgfjk
-        sakdljsalkj;gsadlkfjsadk;kdjaslkdjsalkjdlsakjdlkasjfdsdfslkjlkj
-        salkdjsal;j;lfksalkj
-    </p>
+<head>
+  <meta content="utf-8">
+  <title>WEB - JavaScript</title>
+  <script>
+    function nightDayHandler(self) {
+      var target = document.querySelector('body');
+      if (self.value === 'night') {
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        self.value = 'day';
 
-  </body>
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while (i < alist.length) {
+          alist[i].style.color = 'powderblue';
+          i = i + 1;
+        }
+      } else {
+        target.style.backgroundColor = 'white'
+        target.style.color = 'black'
+        self.value = 'night'
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while (i < alist.length) {
+          alist[i].style.color = 'blue';
+          i = i + 1;
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h1><a href="index.html">WEB</a></h1>
+  <input id="night_day" type="button" name="" value="night" onclick="nightDayHandler(this)">
+
+  <input id="night_day" type="button" name="" value="night" onclick="nightDayHandler(this)">
+  <ol>
+    <li><a href="1.html">HTML</a></li>
+    <li><a href="2.html">CSS</a></li>
+    <li><a href="3.html">JavaScript</a></li>
+  </ol>
+  <h2>JavaScript</h2>
+  <p>
+    sa;dlkasl;kdjaslkdjsalkjdlsakjdlkasjfds;lgfjk
+    sakdljsalkj;gsadlkfjsadk;kdjaslkdjsalkjdlsakjdlkasjfdsdfslkjlkj
+    salkdjsal;j;lfksalkj
+  </p>
+
+</body>
+
 </html>
