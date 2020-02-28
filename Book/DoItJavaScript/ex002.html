@@ -9,7 +9,7 @@
         var box;
         box = 100;
         box = 30;
-        document.write(box);
+        document.write(box, "<br/>");
 
         var s = "javascript";
         var num = "100";
@@ -20,6 +20,127 @@
         var b = true;
         var t = 10 >= 100;
         var k = Boolean("hello");
+
+        var m = Boolean(0); // false를 반환하고 변수 m에 저장한다
+        var k = Boolean("홍길동"); //true를 반환하고 변수 k에 저장한다.
+
+        var a = true; //변수 a에 데이터 true가 저장됩니다.
+        var b = false;//변수 b에 데이터 false가 저장됩니다.
+        var c = 10 > 5; //변수 c에 10>5의 결과 데이터 true가 저장됩니다.
+        var d = Boolean(null); //변수 d에 반환된 데이터 false가 저장됩니다.
+
+        //각 변수에 저장된 데이터를 줄 바꿈("<ba/>")하여 출력합니다.
+        document.write(a, "<br/>");
+        document.write(b, "<br/>");
+        document.write(c, "<br/>");
+        document.write(d, "<br/>");
+
+        // Null & Undefined 데이터
+        var s; //값이 등록되어 있지 않은 경우 undefined
+        var t = null;
+
+        //typeof
+        var num = 100; //변수 num에 숫자형 데이터ㅏ 100이 저장됩니다.
+
+        //변수 str에 문자형 데이터 "자바스크립트"가 저장됩니다.
+        var str = "자바스크립트";
+
+        //변수에 저장된 데이터형을 출력합니다. (자료형을 출력)
+        document.write(typeof num, "<br/>");
+        document.write(typeof str, "<br/>");
+
+        // 산술 연산자
+        document.write("<br/><br/>산술연산자<br/><br/>")
+        var num1 = 15;
+        var num2 = 2;
+        var result;
+
+        result = num1 + num2; //더하기
+        document.write(result, "<br/>")
+        result = num1 - num2; //빼기
+        document.write(result, "<br/>")
+        result = num1 * num2; //곱하기
+        document.write(result, "<br/>")
+        result = num1 / num2; //나누기
+        document.write(result, "<br/>")
+        result = num1 % num2;
+        document.write(result, "<br/>");
+
+        // 문자 결합 연산자
+        document.write("<br/><br/>문자 결합 연산자<br/><br/>")
+        var t1 = "학교종이";
+        var t2 = "땡땡땡";
+        var t3 = 8282;
+        var t4 = "어서 모이자";
+
+        result = t1 + t2 + t3 + t4;
+        document.write(result);
+
+        //대입 연산자
+        document.write("<br/><br/>대입 연산자<br/><br/>")
+
+        num1 = 10;
+        num2 = 3;
+
+        num1 += num2;
+        document.write(num1, "<br/>");
+        num1 -= num2;
+        document.write(num1, "<br/>");
+        num1 *= num2;
+        document.write(num1, "<br/>");
+        num1 &= num2;
+        document.write(num1, "<br/>");
+
+        var t = "<table border='1'>";
+        t += "<tr>";
+        t += "<td>1</td><td>2</td><td>3</td>";
+        t += "</tr>";
+        t += "</table>";
+        document.write(t);
+
+        num1 = 10;
+        num2 = 20;
+
+        num1--; //num1에 데이터가 1감소한다.
+        document.write(num1, "<br/>");
+
+        num1++;
+        document.write(num1, "<br/>");
+
+        result = num2++;
+        document.write(result, "<br/>");
+
+        //비교 연산자
+        document.write("<br/><br/>비교 연산자<br/><br/>")
+        a = 10;
+        b = 20;
+        c = 10;
+        f = "20";
+
+        result = a > b;
+        document.write(result, "<br/>");
+
+        result = a < b;
+        document.write(result, "<br/>");
+
+        result = a <= b;
+        document.write(result, "<br/>");
+
+        result = b == f;
+        document.write(result, "<br/>");
+
+        result = a != b;
+        document.write(result, "<br/>");
+
+        result = b === f;
+        document.write(result, "<br/>");
+
+        //논리 연산자
+        a = 10;
+        b = 3;
+
+        var result = a > b ? "javascript" : "hello";
+        document.write(result);
     </script>
 </head>
 
