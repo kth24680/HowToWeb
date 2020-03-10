@@ -1,0 +1,88 @@
+<!DOCTYPE html
+    PUBLIC "..//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        var year = prompt("현재 몇 년입니까?", "");
+        var mon = prompt("현재 몇 월입니까?", "");
+        var last_day;
+
+        /*
+        현재 월이 며칠까지 있는지 선택문을 이용해 구합니다.
+        */
+
+        switch (mon) {
+            case "1":
+                last_day = 31;
+                break;
+
+            case "2":
+                last_day = 28;
+                break;
+
+                if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                    last_day = 29;
+                }
+                break;
+
+            case "3":
+                last_day = 31;
+                break;
+
+            case "4":
+                last_day = 30;
+                break;
+
+            case "5":
+                last_day = 31;
+                break;
+
+            case "6":
+                last_day = 30;
+                break;
+
+            case "7":
+                last_day = 31;
+                break;
+
+            case "8":
+                last_day = 31;
+                break;
+
+            case "9":
+                last_day = 30;
+                break;
+
+            case "10":
+                last_day = 31;
+                break;
+
+            case "11":
+                last_day = 30;
+                break;
+
+            case "12":
+                last_day = 31;
+                break;
+
+            default:
+                alert("1~12 숫자를 입력해주세요.");
+                break;
+
+        }
+
+        for (var i = 1; i <= last_day; i++) {
+            document.write(i + " ");
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

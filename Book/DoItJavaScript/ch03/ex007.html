@@ -1,0 +1,32 @@
+<!DOCTYPE html
+    PUBLIC "..//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        var id = "easy1004";
+        var pw = "112233";
+
+        var user_id = prompt("아이디는?", "");
+        var user_pw = prompt("비밀번호?", "");
+
+        if (id == user_id) {
+            if (pw == user_pw) {
+                document.writeln(user_id + "님 반갑습니다.");
+            } else {
+                alert("비밀번호가 일치하지 않습니다.");
+            }
+        } else {
+            alert("아이디가 일치하지 않습니다.");
+            location.reload();
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

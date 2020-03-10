@@ -1,0 +1,39 @@
+<!DOCTYPE html
+    PUBLIC "..//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        var site = prompt("네이버, 다음, 네이트, 구글 중 즐겨 사용하는 포털 검색 사이트는?", "");
+        var url;
+        switch (site) {
+            case "네이버":
+                url = "www.naver.com";
+                break;
+
+            case "다음":
+                url = "www.daum.net";
+                break;
+
+            case "네이트":
+                url = "www.nate.com";
+                break;
+
+            case "구글":
+                url = "www.google.com";
+                break;
+
+            default:
+                alert("보기 중에 없는 사이트 입니다.");
+        }
+        if (url) location.href = "http://" + url;
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
