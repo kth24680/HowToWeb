@@ -9,7 +9,7 @@
         function info1() {
             var os = navigator.userAgent.toLowerCase();
             var info_wrap = document.getElementById("info_wrap");
-
+            document.writeln("info 출입")
             if (os.indexOf('windows') >= 0) {
                 info_wrap.innerHTML = "윈도우";
             } else if (os.indexOf('macintosh') >= 0) {
@@ -23,6 +23,7 @@
                 document.writeln("info_wrap : " + info_wrap, "<br/>");
                 document.writeln("if문에 들어가지 않음.")
             }
+            document.writeln("마지막 문장")
             setTimeout("info_wrap.innerHTML=", 3000)
         }
 
