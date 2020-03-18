@@ -1,0 +1,67 @@
+<!DOCTYPE html
+    PUBLIC "..//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function car() {
+            var basic_car = Number(document.getElementById("total").defaultValue);
+            for (var i = 1; i <= 3; i++) {
+                var chkObj = document.getElementById("opt" + i);
+                if (chkObj.checked) basic_car += Number(chkObj.value);
+            }
+            document.getElementById("total").value = basic_car;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>자동차 견적</h1>
+    <div id="carZone">
+        <p><img src="image/bee1.jpg" alt="자동차"></p>
+        <table id="estimate">
+            <colgroup>
+                <col width="380px" />
+                <col width="160px" />
+                <col width="*" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="row">옵션</th>
+                    <th scope="row">추가 가격</th>
+                    <th scope="row">선택</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th scope="col">(기본)차량가격</th>
+                    <td colspan="2">
+                        <input type="text" name="total" id="total" value="13450000" readonly="readonly" />
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td><label for="opt1">인조가죽시트</label></td>
+                    <td>250000</td>
+                    <td><input type="checkbox" name="opt1" id="opt1" value="250000" onclick="car();" /></td>
+                </tr>
+                <tr>
+                    <td><label for="opt2">내비게이션</label></td>
+                    <td>250000</td>
+                    <td><input type="checkbox" name="opt2" id="opt2" value="250000" onclick="car();"></td>
+                </tr>
+                <tr>
+                    <td><label for="opt3">선루프</label></td>
+                    <td>440000</td>
+                    <td><input type="checkbox" name="opt3" id="opt3" value="44000" onclick="car();" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
