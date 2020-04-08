@@ -1,6 +1,6 @@
 <div class="nav-bar"></div>
 <div id="app">
-    <product :premium="premium"></product>
+    <product :premium="premium" @add-to-cart="updateCart" @remove-from-cart="removeItem"></product>
 
 </div>
 <script src="https://unpkg.com/vue"></script>

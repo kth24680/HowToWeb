@@ -1,0 +1,26 @@
+<!DOCTYPE html
+    PUBLIC "..//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <script type="text/javascript">
+        var color = ["white", "yellow", "aqua", "purple"];
+        var i = 0;
+        function colorBg() {
+            i++;
+            if (i >= color.length) i = 0;
+
+            var bodyTag = document.getElementsByTagName("body")[0];
+            bodyTag.style.backgroundColor = color[i];
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="colorBg();">배경색 바꾸기</button>
+</body>
+
+</html>
