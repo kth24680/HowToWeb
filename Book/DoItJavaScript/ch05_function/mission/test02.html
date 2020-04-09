@@ -1,0 +1,27 @@
+<!DOCTYPE html
+    PUBLIC "..//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function avgWeight(height, weight) {
+            avg = (height - 100) * 0.9;
+            document.write("적정 몸무게는 " + avg + "kg입니다.<br>");
+
+            if (avg > weight) {
+                document.write("적정 몸무게 미만입니다.");
+            } else {
+                document.write("적정 몸무게 이상입니다.");
+            }
+        }
+        avgWeight(180, 74);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
