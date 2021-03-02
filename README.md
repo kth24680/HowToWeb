@@ -25,6 +25,6 @@
 
 ## [org] 공식 사이트
 ### 1. Vue.js
-- Intro to Vue 2   
+- Intro to Vue 2  https://www.vuemastery.com/courses/intro-to-vue-js/communicating-events
 <br/>
 <br/>
