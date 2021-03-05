@@ -1,0 +1,12 @@
+.container {
+
+}
+
+.container .item {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  margin: 10px 10px;
+  border: 4px;
+
+}

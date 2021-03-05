@@ -61,3 +61,49 @@ ex) a:hover {}
 ex) a:active {}
 - focus : 선택자 A 요소가 포커스 되면 선택.
 ex) input:focus {}
+- first-child : 선택자 A가 형제 요소 중 첫째라면 선택.
+ex) .fruits span:first-child {}
+- last-child : 선택자 A가 형제 요소 중 막내라면 선택
+ex) .fruits h3:last-child {}
+- nth-child(n) : 선택자 A가 형제 요소 중 (n)째라면 선택.
+ex) .fruits *:nth-child(2n) {} // n은 Zero-Based Numbering(? * n 번째 선택)
+- not : 선택자 X가 아닌 A 요소 선택
+ex) .fruits *:not (span) {} 
+
+# 가상 요소 선택자 
+- before : 선택자 A 요소의 내부 앞에 (인라인 요소) 내용 (Content)을 삽입
+ex) .box::before { content:???} // 자주 사용됨. 
+- after : 선택자 A 요소의 내부 뒤에 (인라인 요소) 내용 (Content)을 삽입.
+ex) .box::after { content:??}
+
+# 속성 선택자
+- [disabled] {}
+- [type] {}
+- [type="password"] {}
+
+
+------------------------------------
+
+# 상속 
+.animal {} // 스타일 상속
+상속되는 CSS 속성들 
+- font-style, font-weight, font-size, line-height, font-family, color, text-align ...
+
+## 강제 상속
+
+------------------------------------
+
+# 선택자 우선 순위
+우선순위란, 같은 요소가 여러 선언의 대상이 된 경우, 어떤 선언의 CSS 속성을 우선 적용할지 결정하는 방법
+1. 점수가 높은 선언이 우선함.
+2. 점수가 같으면, 가장 마지막에 해석된 선언이 우선함.
+
+명시도.
+1. div {!important} // 중요도
+2. style = "color:orange"  
+3. #color_yellow {}
+4. .color_green {}
+5. div {}
+6. * {}
+7. body {} 
+

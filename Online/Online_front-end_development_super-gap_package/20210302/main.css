@@ -28,3 +28,52 @@ input {
 input:focus {
   background-color: orange;
 }
+
+.box::before {
+  content: "Before";
+}
+.box::after {
+  display: block;
+  width:100px;
+  height:100px;
+  background-color: royalblue;
+}
+
+[type='text'] {
+  background-color:orange;
+}
+
+[type='password'] {
+  background-color:orange;
+}
+
+[data-fruit-name] {
+  color: brown;
+}
+
+.parent {
+  width: 300px;
+  height: 200px;
+  background-color: red;
+}
+
+.child {
+  width: 100px;
+  height: inherit; /* 부모 요소를 상속 */
+  background-color: orange;
+  position: fixed;
+  top: 100px;
+  right: 10px;
+}
+
+div {
+  font-size: 70px;
+}
+
+div .hello {
+  color: red;
+}
+
+.hello {
+  color: blue;
+}
