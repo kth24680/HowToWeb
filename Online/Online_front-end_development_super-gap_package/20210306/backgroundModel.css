@@ -1,0 +1,15 @@
+body {
+  height: 3000px;
+}
+
+div {
+  width: 200px;
+  height: 200px;
+  background-color: orange;
+  background-image: url("https://heropy.blog/css/images/logo.png");
+  background-size:150px;
+  background-size: cover;;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
