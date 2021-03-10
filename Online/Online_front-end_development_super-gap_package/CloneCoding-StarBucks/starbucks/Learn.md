@@ -47,3 +47,17 @@
 
 ### https://material.io/resources/icons/?style=baseline
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+-----------------------
+
+# BEM (Block Element Modifier)
+- 요소__일부분 Underscore(Lodash) 기호로 요소의 일부분을 표시
+- 요소--상태 Hyphen(Dash) 기호로 요소의 상태를 표시
+
+# lodash
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous"></script>
+- _.throttle(함수, 시간) // 함수의 반복을 줄이기 위해 사용.
+
+# gsap
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ==" crossorigin="anonymous"></script>
+- gsap.to(요소, 지속시간, 옵션); // js에서 컨트롤의 css를 사용하기 위해 사용
