@@ -1,0 +1,93 @@
+body {
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: 'Nanum Gothic', sans-serif;
+  height: 3000px;
+}
+img {
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+.inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* HEADER */
+header {
+ display: flex;
+}
+
+header .inner .header__left{
+  background-color: orange;
+  position: absolute;
+  width: 100px;
+  top:0;
+  left: 0;
+  margin: auto;
+}
+
+header .inner .header__center{
+  background-color: orange;
+  position: absolute;
+  left: 50%;
+  width: 100px;
+  margin-left: calc(100px /-2);
+  text-align: center;
+}
+
+header .inner .header__right{
+  background-color: orange;
+  position: absolute;
+  width: 100px;
+  text-align: right;
+  top:0;
+  right: 0;
+  margin: auto;
+}
+
+section .inner .dark,
+section .inner .white
+ {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+}
+
+section .inner .dark {
+  text-align: center;
+  background-color: #333;
+}
+
+section .inner .dark .hello{
+  color: #FFF;
+  text-align: center;
+  transition: 1s;
+}
+
+section .inner .dark .intro{
+  display: none;
+  color: #FFF;
+  text-align: center;
+  transition: 1s;
+}
+
+#main {
+  display: none;
+}
+
+section .inner .white{
+  background-color: #f6f5ef;
+}
+
+section .inner .white .intro{
+  display: none;
+  color: #FFF;
+  text-align: center;
+  transition: 1s;
+}

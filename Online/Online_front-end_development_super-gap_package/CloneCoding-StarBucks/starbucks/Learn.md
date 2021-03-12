@@ -64,3 +64,6 @@
 
 -----------------------------
 
+# youtube iframe api
+https://developers.google.com/youtube/iframe_api_reference?hl=ko
+
