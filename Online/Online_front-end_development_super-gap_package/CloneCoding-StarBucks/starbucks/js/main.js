@@ -18,6 +18,14 @@ searchInputEl.addEventListener('blur', function() {
 });
 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
+
+toTopEl.addEventListener('click', function () {
+  gsap.to(window, .3, {
+    scrollTo: 0
+  })
+})
+
 // 화면 스크롤 시, 0.3 초마다 실행되도록 함. 호출되는 반복되는 이벤트의 횟수를 줄일 수 있음.
 // _.throttle(함수, 시간)
 window.addEventListener('scroll', _.throttle(function () {
@@ -29,14 +37,20 @@ window.addEventListener('scroll', _.throttle(function () {
       opacity: 0,
       display: 'none'
     })
-    
+    // 버튼 보이기
+    gsap.to(toTopEl, .2, {
+      x: 0
+    })
   } else {
     // 배지 보이기
     gsap.to(badgeEl, .6, {
       opacity: 1,
       display: 'block'
     })
-    
+    // 버튼 숨기기
+    gsap.to(toTopEl, .2, {
+      x: 100
+    })
   }
 }, 300));
 
@@ -75,6 +89,17 @@ new Swiper('.promotion .swiper-container', {
   }
 });
 
+new Swiper('.awards .swiper-container', {
+  autoplay: true,
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 5,
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next'
+  }
+});
+
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
 let isHidePromotion = false;
@@ -110,3 +135,18 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15);
 floatingObject('.floating2', .5, 15);
 floatingObject('.floating3', 1.5, 20);
+
+const spyEls = document.querySelectorAll('section.scroll-spy');
+spyEls.forEach(function (spyEl) {
+  new ScrollMagic
+    .Scene({
+      triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+      triggerHook: .8 // 0.8 지점에 걸리면 실행되도록 함.
+    }) // Scene 특정 요소를 감시하는 옵션.
+    .setClassToggle(spyEl, 'show')
+    .addTo(new ScrollMagic.Controller()); // 스크롤 매직에서 내부 컨트롤러에 동작을 수행하도록 만들어줌. 
+})
+
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear();
+
