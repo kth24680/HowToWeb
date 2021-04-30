@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>호(arc)</title>
+  <script type="text/javascript">
+    function draw(){
+      var canvas = document.getElementById('canvas');
+      if (canvas.getContext){
+        var ctx = canvas.getContext('2d');
+
+        for(var i = 0 ; i < 4 ; i++ ) {
+          for (var j = 0 ; j < 3 ; j++) {
+            ctx.beginPath();
+            var x = 25 + j * 50; // x 좌표
+            var y = 25 + i * 50; // y 좌표
+            var radius = 20; // 호의 반경
+            var startAngle = 0; // 원의 시작점
+            var endAngle = Math.PI + (Math.PI * j) / 2; // 원의 종점
+            var anticlockwise = i % 2 == 0 ? false : true;
+
+            ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
+
+            if(i > 1) {
+              ctx.fill();
+            } else {
+              ctx.stroke();
+            }
+
+          }
+        }
+
+        
+
+      }
+    }
+  </script>
+  <style type="text/css">
+    canvas { border: 1px solid black; }
+  </style>
+</head>
+<body onload="draw();">
+  <canvas id="canvas" width="300" height="300"></canvas>
+</body>
+</html>

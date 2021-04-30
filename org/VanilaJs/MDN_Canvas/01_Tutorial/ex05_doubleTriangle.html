@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>삼각형 두 개</title>
+  <script type="application/javascript">
+    function draw(){
+      var canvas = document.getElementById('canvas');
+      if (canvas.getContext){
+        var ctx = canvas.getContext('2d');
+
+        ctx.beginPath();
+        ctx.moveTo(25, 25); // (25, 25) 위치
+        ctx.lineTo(105, 25); // (25,(25) -> (105, 25)로 긋기
+        ctx.lineTo(25,105); // (105, 25) -> (25, 105)로 긋기
+        ctx.fill(); // 자동으로 그리기를 끝 맺어줌.
+
+        ctx.beginPath();
+        ctx.moveTo(125, 125); // (125, 125) 위치
+        ctx.lineTo(125, 45); // (125,(125) -> (125, 45)로 긋기
+        ctx.lineTo(45,125); // (125, 45) -> (45, 125)로 긋기
+        ctx.closePath(); // 현재 시점에서 시작점까지 직선을 추가함.
+        ctx.stroke();
+    }
+  }
+  </script>
+  <style type="text/css">
+    canvas { border: 1px solid black; }
+  </style>
+</head>
+<body onload="draw();">
+  <canvas id="canvas" width="300" height="300"></canvas>
+</body>
+</html>
