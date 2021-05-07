@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>템플릿</title>
+  <script type="text/javascript">
+    function draw(){
+      var canvas = document.getElementById('canvas');
+      if (canvas.getContext){
+        var ctx = canvas.getContext('2d');
+        var lineCap = ['butt', 'round', 'square'];
+
+        // 안내선을 그린다
+        ctx.strokeStyle = '#09f';
+        ctx.beginPath();
+        ctx.moveTo(10, 10);
+        ctx.lineTo(140, 10);
+        ctx.moveTo(10, 140);
+        ctx.lineTo(140, 140);
+        ctx.stroke();
+
+        // 선을 그린다
+        ctx.strokeStyle = 'black';
+        for (var i = 0 ; i < lineCap.length; i++) {
+          ctx.lineWidth = 15;
+          ctx.lineCap = lineCap[i];
+          ctx.beginPath();
+          ctx.moveTo(25 + i * 50, 10);
+          ctx.lineTo(25 + i * 50, 140);
+          ctx.stroke();
+        }
+       
+      }
+    }
+  </script>
+  <style type="text/css">
+    canvas { border: 1px solid black; }
+  </style>
+</head>
+<body onload="draw();">
+  <canvas id="canvas" width="150" height="150"></canvas>
+</body>
+</html>
