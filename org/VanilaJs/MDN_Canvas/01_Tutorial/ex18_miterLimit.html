@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>템플릿</title>
+  <script type="text/javascript">
+    function draw(){
+      var canvas = document.getElementById('canvas');
+      if (canvas.getContext){
+        var ctx = canvas.getContext('2d');
+        /**
+         * miterLimit = max miterLength / lineWidth = 1 / sin (min  θ / 2)
+         */
+        
+        // 캔버스를 비운다
+        ctx.clearRect(0, 0, 150, 150);
+
+        // 안내선을 그린다
+        ctx.strokeStype = '#09f';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(-5, 50, 160, 50);
+
+        // 선 스타일을 설정한다.
+        ctx.strokeStyle = '#000';
+        ctx.lineWidth = 10;
+
+        // 입력 값을 검사한다.
+        if ( document.getElementById('miterLimit').value.match(/\d+(\.\d+)?/)) {
+          ctx.miterLimit = parseFloat(document.getElementById('miterLimit').value);
+        } else {
+          alert('Value must be a positive number');
+        }
+
+        // 선을 그린다.
+        ctx.beginPath();
+        ctx.moveTo(0, 100);
+        for (let i = 0 ; i < 24 ; i++) {
+          var dy = i % 2 == 0 ? 25 : -25;
+          ctx.lineTo(Math.pow(i, 1.5) * 2, 75 + dy);
+        }
+        ctx.stroke();
+        return false
+      }
+    }
+  </script>
+  <style type="text/css">
+    canvas { border: 1px solid black; }
+  </style>
+</head>
+<body onload="draw();">
+  <canvas id="canvas" width="150" height="150"></canvas>
+  <input id="miterLimit" />
+  <button onclick="draw">Btn</button>
+</body>
+</html>

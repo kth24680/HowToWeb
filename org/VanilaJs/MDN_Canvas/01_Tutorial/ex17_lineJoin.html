@@ -10,28 +10,29 @@
       var canvas = document.getElementById('canvas');
       if (canvas.getContext){
         var ctx = canvas.getContext('2d');
-        var lineCap = ['butt', 'round', 'square'];
-
-        // 안내선을 그린다
-        ctx.strokeStyle = '#09f';
-        ctx.beginPath();
-        ctx.moveTo(10, 10);
-        ctx.lineTo(140, 10);
-        ctx.moveTo(10, 140);
-        ctx.lineTo(140, 140);
-        ctx.stroke();
-
-        // 선을 그린다
-        ctx.strokeStyle = 'black';
-        for (var i = 0 ; i < lineCap.length; i++) {
-          ctx.lineWidth = 15;
-          ctx.lineCap = lineCap[i];
+        /**
+         * round : 도형의 모서리를 연결하는 부분들의 부분들의 공통 끝점
+         * 을 중심으로 하는 원모양을 만들며, 원의 반지름은 선의 두께와 같다.
+         * 
+         * bevel : 도형의 모서리를 연결하는 부분들의 공통 끝점에서 세모
+         * 모양으로 만든다.
+         * 
+         * miter : 도형의 모서리를 두 부분의 바깥쪽 테두리 선을 각각 연장하여 
+         * 교차된 점으로 생긴 마름모꼴 모양을 만들며 miterLimit 속성값에 따라 
+         * 모양이 달라진다. 
+         */
+        var lineJoin  = ['round', 'bevel', 'miter'];
+        ctx.lineWidth = 10;
+        for (let i = 0 ; i < lineJoin.length; i++) {
+          ctx.lineJoin = lineJoin[i];
           ctx.beginPath();
-          ctx.moveTo(25 + i * 50, 10);
-          ctx.lineTo(25 + i * 50, 140);
+          ctx.moveTo(-5, 5 + i * 40);
+          ctx.lineTo(35, 45 + i * 40);
+          ctx.lineTo(75, 5 + i * 40);
+          ctx.lineTo(115, 45 + i * 40);
+          ctx.lineTo(155, 5 + i * 40);
           ctx.stroke();
         }
-       
       }
     }
   </script>
