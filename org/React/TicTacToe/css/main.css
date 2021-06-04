@@ -1,6 +1,14 @@
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 20px;
+  background-color:pink;
+}
+
+.container {
+  background-color: whitesmoke;
+  border-radius: 20px;
+  width: 80%;
+  padding-bottom: 30px;
 }
 
 ol, ul {
@@ -23,13 +31,13 @@ ol, ul {
   float: left;
   font-size: 24px;
   font-weight: bold;
-  line-height: 34px;
-  height: 34px;
+  line-height: 50px;
+  height: 50px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 50px;
 }
 
 .square:focus {
@@ -57,3 +65,26 @@ ol, ul {
   padding: 20px;
   white-space: pre-wrap;
 }
+
+#root{
+  text-align: center;
+  font-family: 'Gugi', cursive;
+  width: 80%;
+}
+
+.game {
+  display: block;
+}
+
+.gameDesc {
+  font-family: 'Sunflower', sans-serif;
+}
+
+.board-row {
+  width: 150px !important;
+}
+
+h1, p {
+  text-align: center;
+}
+
