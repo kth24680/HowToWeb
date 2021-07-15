@@ -175,11 +175,89 @@ const arr52 = () => {
   console.log(arr); // [ 3, 4, 1, 2 ]
 }
 
+// 스프레드 문법 
+const arr53 = () => {
+  const arr = [1, 2];
+
+  // ES6 스프레드 문법
+  const newArr = [3, ...arr];
+  console.log(newArr); // [ 3, 1, 2 ]
+}
+
+// Array.prototype.shift
+const arr54 = () => {
+  const arr = [1, 2];
+
+  // 원본 배열에서 첫 번째 요소를 제거하고 제거한 요소를 반환한다. 
+  let result = arr.shift();
+  console.log(result); // 1
+
+  // shift 메서드는 원본 배열을 직접 변경한다.
+  console.log(arr); // [2]
+}
+
+// Araay.prototype.concat
+const arr57 = () => {
+  const arr1 = [1, 2];
+  const arr2 = [3, 4];
+
+  // 배열 arr2를 원본 배열 arr1의 마지막 요소로 추가한 새로운 배열을 반환한다. 
+  // 인수로 전달한 값이 배열인 경우 배열을 해체하여 새로운 배열의 요소로 추가한다.
+  let result = arr1.concat(arr2); 
+  console.log(result); // [ 1, 2, 3, 4 ]
+
+  // 숫자를 원본 배열 arr1의 마지막 요소로 추가한 새로운 배열을 반환한다.
+  result = arr1.concat(3);
+  console.log(result); // [ 1, 2, 3 ]
+
+  // 배열 arr2와 숫자를 원본 배열 arr1의 마지막 요소로 추가한 새로운 배열을 반환한다.
+  result = arr1.concat(arr2, 5);
+  console.log(result); // [ 1, 2, 3, 4, 5 ]
+
+  // 원본 배열은 변경되지 않는다.
+  console.log(arr1); // [ 1, 2 ]
+}
+
+// ES6 스프레드 문법
+const arr60 = () => {
+  let result = [1, 2].concat([3, 4]);
+  console.log(result); // [ 1, 2, 3, 4 ]
+
+  // concat 메서드는 ES6의 스프레드 문법으로 대체할 수 있다.
+  result = [...[1, 2], ...[3, 4]];
+  console.log(result); // [ 1, 2, 3, 4 ]
+}
+
+// Array.prototype.splice
+const arr61 = () => {
+  const arr = [1, 2, 3, 4];
+
+  // 원본 배열의 인덱스 1부터 2개의 요소를 제거하고 그 자리에 새로운 요소 20, 30을 삽입한다.
+  const result = arr.splice(1, 2, 20, 30);
+
+  // 제거한 요소가 배열로 반환된다.
+  console.log(result); // [ 2, 3 ]
+  // splice 메서드는 원본 배열을 직접 변경한다.
+  console.log(arr); // [ 1, 20, 30, 4 ]
+}
+
+const arr62 = () => {
+  const arr = [1, 2, 3, 4];
+
+  // 원본 배열의 인덱스 1부터 0개의 요소를 제거하고 그 자리에 새로운 요소 100을 삽입한다.
+  const result = arr.splice(1, 0, 100);
+
+  // 원본 배열이 변경된다.
+  console.log(arr); // [1, 100, 2, 3, 4]
+  // 제거한 요소가 배열로 반환된다.
+  console.log(result); // []
+}
 
 
 let arr = [
   arr21, arr23, arr27, arr28, arr29, arr32, arr38, arr40, arr41, arr42,
-  arr43, arr44, arr45, arr47, arr48, arr52
+  arr43, arr44, arr45, arr47, arr48, arr52, arr53, arr54, arr57, arr60,
+  arr61, arr62,
 ];
 for( let i = 0 ; i < arr.length ; i++) {
   arr[i]();
