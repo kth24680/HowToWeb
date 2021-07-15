@@ -417,11 +417,40 @@ const arr80 = () => {
   console.log(result); // [ 1, 1, 1 ]
 }
 
+// Array.from 메서드 사용하면 두 번째 인수로 전달한 콜백 함수를 통해 요소값을 만들면서 배열을 채울 수 있다.
+// 두 번째 인수로 전달한 콜백 함수에 첫 번째 인수에 의해 생성된 배열의 요소값과 인덱스를 순차적으로 전달하면서 호출하고, 콜백 함수의 반환값으로 구성된 배열을 반환한다.
+const arr81 = () => {
+  // 인수로 전달받은 정수만큼 요소를 생성하고 0부터 1씩 증가하면서 요소를 채운다.
+  const sequences = (length = 0) => Array.from({ length }, (_, i) => i);
+  // const sequences = (length = 0) => Array.from({new Array(lenght) }, (_, i) => i);
+
+  console.log(sequences(3)); // [0, 1, 2]
+};
+
+// Array.prototype.includes (ES7)
+const arr82 = () => {
+  const arr = [1, 2, 3];
+
+  // 배열에 요소 2가 포함되어 있는지 확인한다.
+  console.log(arr.includes(2)); // true
+
+  // 배열에 요소 100이 포함되어 있는지 확인한다.
+  console.log(arr.includes(100)); // false
+
+  // 배열에 요소 1이 포함되어 있는지 인덱스 1부터 확인한다.
+  console.log(arr.includes(1, 1)); // false
+
+  // 배열에 요소 3이 포함되어 있는지 인덱스 2(arr.length -1)부터 확인한다.
+  console.log(arr.includes(3, -1)); // true
+
+  [NaN].indexOfg
+}
+
 let arr = [
   arr21, arr23, arr27, arr28, arr29, arr32, arr38, arr40, arr41, arr42,
   arr43, arr44, arr45, arr47, arr48, arr52, arr53, arr54, arr57, arr60,
   arr61, arr62, arr65, arr66, arr67, arr72, arr73, arr74, arr75, arr76,
-  arr77, arr80,
+  arr77, arr80, arr81, arr82,
 ];
 
 for( let i = 0 ; i < arr.length ; i++) {
