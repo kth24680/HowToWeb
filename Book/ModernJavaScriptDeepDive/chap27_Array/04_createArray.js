@@ -253,12 +253,177 @@ const arr62 = () => {
   console.log(result); // []
 }
 
+// 특정 요소 삭제
+const arr65 = () => {
+  const arr = [ 1, 2, 3, 1, 2];
+
+  // 배열 array에서 item 요소를 제거한다. item 요소가 여러 개 존재하면 첫 번째 요소만 제거한다.
+  function remove(array, item) {
+    // 제거할 item 요소의 인덱스를 취득한다.
+    const index = array.indexOf(item);
+
+    // 제거할 item 요소가 있다면 제거한다.
+    if (index !== -1) array.splice(index, 1);
+
+    return array;
+  }
+
+  console.log(remove(arr, 2)); // [ 1, 3, 1, 2 ]
+  console.log(remove(arr, 10)); // [ 1, 3, 1, 2 ]
+}
+
+// filter 메서드를 사용하여 특정요소 제거 (중복 모두 삭제)
+
+const arr66 = () => {
+  const arr = [1, 2, 3, 1 ,2];
+
+  // 배열 array에서 모든 item 요소를 제거한다.
+  function removeAll(array, item) {
+    return array.filter(v => v !== item);
+  }
+
+  console.log(removeAll(arr, 2)); // [ 1, 3, 1 ]
+}
+
+// Array.prototype.slice 
+
+const arr67 = () => {
+  const arr = [1, 2, 3];
+
+  // arr[0]부터 arr[1] 이전(arr[1] 미포함)까지 복사하여 반환한다.
+  console.log(arr.slice(0, 1)); // [1]
+
+  // arr[0]부터 arr[1] 이전(arr[1] 미포함)까지 복사하여 반환한다.
+  console.log(arr.slice(1, 2)); // [2]
+
+  // 원본은 변경되지 않는다.
+
+  console.log(arr); [ 1, 2, 3 ]
+  
+  // arr[1]부터 이후의 모근 요소를 복사하여 반환한다.
+  console.log(arr.slice(1)); // [ 2, 3 ]
+
+  // 배열의 끝에서부터 요소를 한 개 복사하여 반환한다.
+  console.log(arr.slice(-1)); // [3]
+
+  // 배열의 끝에서부터 요소를 두 개 복사하여 반환한다.
+  console.log(arr.slice(-2)); // [2, 3]
+
+  const copy = arr.slice();
+  console.log(copy); // [1, 2, 3]
+  console.log(copy === arr); // false
+}
+
+// 유사 배열 객체를 배열로 변환
+const arr72 = () => {
+  function sum() {
+    // 유사 배열 객체를 배열로 변환(ES5)
+    var arr = Array.prototype.slice.call(arguments);
+    console.log(arr); // [1, 2, 3]
+    
+    return arr.reduce(function (pre, cur) {
+      return pre + cur;
+    }, 0);
+  }
+
+  console.log(sum(1, 2, 3)); // 6
+}
+
+// Array.from 메서드를 이용한 유사 배열 객체를 배열로 변환
+const arr73 = () => {
+  function sum() {
+    const arr = Array.from(arguments);
+    console.log(arr); // [1, 2, 3]
+
+    return arr.reduce((pre, cur) => pre + cur, 0);
+  }
+
+  console.log(sum(1, 2, 3)); // 6
+}
+
+// ES6 스프레드를 이용한 유사 배열 객체를 배열로 변환
+const arr74 = () => {
+  // 이터러블을 배열로 변환(ES6 스프레드 문법)
+
+  function sum() {
+    const arr = [...arguments];
+    console.log(arguments)
+    console.log(arr); // [1, 2, 3];
+
+    return arr.reduce((pre, cur) => pre + cur, 0);
+  }
+  console.log(sum(1, 2, 3));
+}
+
+// Array.prototype.join
+const arr75 = () => {
+  const arr = [1, 2, 3, 4];
+
+  // 기본 구분자는 콤마다.
+  // 원본 배열 arr의 모든 요소를 문자열로 변환한 후 기본 구분자로 연결한 문자열을 반환한다.
+  console.log(arr.join()); // '1,2,3,4';
+
+  // 원본 배열 arr의 모든 요소를 문자열로 변환한 후, 빈 문자열로 연결한 문자열을 반환한다.
+  console.log(arr.join('')); // '1234'
+
+  // 원본 문자열 arr의 모든 요소를 문자열로 변환한 후 구분자 ':'로 연결한 문자열을 반환한다.
+  console.log(arr.join(':')); // 1:2:3:4
+}
+
+// Array.prototype.reverse
+const arr76 = () => {
+  const arr = [1, 2, 3];
+  const result = arr.reverse();
+
+  // reverse 메서드는 원본 배열을 직접 변경한다.
+  console.log(arr); // [3, 2, 1]
+
+  // 반환 값은 변경된 배열이다.
+  console.log(result); // [3, 2, 1]
+}
+
+// Array.prototype.fill (ES6)
+const arr77 = () => {
+  let arr = [1, 2, 3, 4, 5];
+
+  // 인수로 전달받은 값 0을 배열의 처음부터 끝까지 요소로 채운다.
+  arr.fill(0);
+
+  // fill 메서드는 원본 배열을 직접 변경한다.
+  console.log(arr); // [ 0, 0, 0, 0, 0 ]
+
+  arr = [1, 2, 3, 4, 5];
+  // 인수로 전달받은 값 0을 배열의 인덱스 1부터 끝까지 요소로 채운다.
+  arr.fill(0, 1);
+  console.log(arr); // [ 1, 0, 0, 0, 0 ]
+  
+  arr = [1, 2, 3, 4, 5];
+  // 인수로 전달받은 값 0을 배열의 인덱스 1부터 3이전(인덱스 3미포함)까지 요소로 채운다.
+  arr.fill(0, 1, 3)
+  console.log(arr); // [ 1, 0, 0, 4, 5 ]
+}
+
+const arr80 = () => {
+  const arr = new Array(3);
+  console.log(arr); // [ <3 empty items> ]
+
+  // 인수로 전달받은 값 1을 배열의 처음부터 끝까지 요소로 채운다.
+  const result = arr.fill(1);
+
+  // fill 메서드는 원본 배열을 직접 변경한다.
+  console.log(arr); // [1, 1, 1]
+
+  // fill 메서드는 변경된 원본 배열을 반환한다.
+  console.log(result); // [ 1, 1, 1 ]
+}
 
 let arr = [
   arr21, arr23, arr27, arr28, arr29, arr32, arr38, arr40, arr41, arr42,
   arr43, arr44, arr45, arr47, arr48, arr52, arr53, arr54, arr57, arr60,
-  arr61, arr62,
+  arr61, arr62, arr65, arr66, arr67, arr72, arr73, arr74, arr75, arr76,
+  arr77, arr80,
 ];
+
 for( let i = 0 ; i < arr.length ; i++) {
   arr[i]();
   console.log();
