@@ -443,14 +443,113 @@ const arr82 = () => {
   // 배열에 요소 3이 포함되어 있는지 인덱스 2(arr.length -1)부터 확인한다.
   console.log(arr.includes(3, -1)); // true
 
-  [NaN].indexOfg
+  [NaN].indexOf(NaN) !== -1; // false
+  [NaN].includes(NaN); // true
+}
+
+// Array.prototype.flat (ES10)
+
+const arr85 = () => {
+  console.log([1, [2, 3, 4, 5]].flat()); // [1, 2, 3, 4, 5]
+  
+  console.log([1, [2, [3, [4]]]].flat()); // [1, 2, [3, [4]]]
+  console.log([1, [2, [3, [4]]]].flat(1)); // [1, 2, [3, [4]]]
+  
+  console.log([1, [2, [3, [4]]]].flat(2)); // [1, 2, 3, [4]]
+  
+  console.log([1, [2, [3, [4]]]].flat().flat()); // [1, 2, 3, [4]]
+              
+  console.log([1, [2, [3, [4]]]].flat(Infinity); // [1, 2, 3, 4]
+}
+
+const arr87 = () => {
+  const fruit_eng = ['Banana', 'Orange', 'Apple'];
+  
+  // ascending sort
+  fruit_eng.sort();
+  
+  console.log(fruit_eng);
+  
+  // descending sort
+  fruit.reserve();
+  
+  console.log(fruit_eng);
+  
+  const point = [40, 100, 1, 5, 2, 25, 10];
+  
+  points.sort();
+  
+  console.log(points); // [1, 10, 100, 2, 25, 40, 5]
+  
+  points.sort((a, b) => a - b);
+  console.log(points[0], points[points.length - 1]); // 1 100
+  
+  point.sort((a, b) => b - a);
+  console.log(points); // [100, 40, 25, 10, 5, 2, 1]
+  
+  console.log(points[points.length - 1], points[0]; // 1 100
+}
+
+// Array.prototype.forEach
+
+const arr95 = () => {
+  const numbers = [1, 2, 3];
+  const pows = [];
+  
+  for (let i = 0 ; i < number.length; i++) {
+    pows.push(numbers[i] ** 2); 
+  }
+  
+  console.log(pows); // [1, 4, 9]
+}
+
+const arr96 = () => {
+  const numbers = [1, 2, 3]
+  const pows = [];
+  
+  numbers.forEach(item => pows.push(item ** 2));
+  console.log(pows); // [1, 4, 9]
+  
+  [1, 2, 3].forEach((item, index), arr) => {
+    console.log(`${item}, ${index}, ${JSON.stringify(arr)}`); 
+  });
+}
+
+const arr100 = () => {
+  class Number {
+    multiply(arr) {
+      arr.forEach(function (item) {
+        // TypeError: Cannot read property 'numberArray' of undefined
+        this.numberArray.push(item * item);
+      });
+    }
+  }
+  
+  const numbers = new Number();
+  numbers.multiply([1, 2, 3])
+}
+
+const arr101 = () => {
+  class Numbers {
+    numberArray = [];
+    
+    multiply(arr) {
+      arr.forEach(function (item) {
+        this.numberArray.push(item * item);
+      }, this);
+    }
+  }
+  
+  const numbers = new Numbers();
+  numbers.multiply([1, 2, 3]);
+  console.log(numbers.numberArray); // [1 ,4, 9]
 }
 
 let arr = [
   arr21, arr23, arr27, arr28, arr29, arr32, arr38, arr40, arr41, arr42,
   arr43, arr44, arr45, arr47, arr48, arr52, arr53, arr54, arr57, arr60,
   arr61, arr62, arr65, arr66, arr67, arr72, arr73, arr74, arr75, arr76,
-  arr77, arr80, arr81, arr82,
+  arr77, arr80, arr81, arr82, arr85, arr87, arr95, arr96
 ];
 
 for( let i = 0 ; i < arr.length ; i++) {
